@@ -1,0 +1,64 @@
+# .dcs/seo.yaml
+# Managed by DCS Portal - Do not edit manually
+# SEO configuration for Maple Street Bakery
+
+version: 1
+lastUpdated: "2026-01-06T00:00:00Z"
+updatedBy: "initial-setup"
+
+global:
+  siteName: Maple Street Bakery
+  siteUrl: https://demo-3.duffcloudservices.com
+  locale: en_US
+  defaultTitle: Maple Street Bakery | Fresh Artisan Baked Goods
+  defaultDescription: Fresh-baked artisan bread, pastries, and treats made daily in San Francisco since 1987. Visit our Maple Street location.
+  titleTemplate: "%s | Maple Street Bakery"
+
+  social:
+    instagram: "@maplestreetbakery"
+    facebook: "maplestreetbakery"
+
+  images:
+    logo: https://demo-3.duffcloudservices.com/logo.svg
+    ogDefault: https://demo-3.duffcloudservices.com/og-image.jpg
+
+  robots: "index, follow"
+
+  schemas:
+    - type: LocalBusiness
+      properties:
+        "@type": Bakery
+        name: Maple Street Bakery
+        description: Fresh-baked artisan bread, pastries, and treats made daily.
+        url: https://demo-3.duffcloudservices.com
+        telephone: "(415) 555-0123"
+        address:
+          "@type": PostalAddress
+          streetAddress: 456 Maple Street
+          addressLocality: San Francisco
+          addressRegion: CA
+          postalCode: "94110"
+          addressCountry: US
+        openingHours:
+          - "Mo-Fr 06:00-18:00"
+          - "Sa 07:00-17:00"
+          - "Su 08:00-15:00"
+        priceRange: "$$"
+
+pages:
+  home:
+    title: Fresh Artisan Baked Goods
+    description: Fresh-baked artisan bread, pastries, and treats made daily in San Francisco since 1987. Order online or visit us on Maple Street.
+    noTitleTemplate: true
+
+  menu:
+    title: Menu
+    description: Browse our menu of fresh-baked breads, pastries, sweets, and drinks. Everything made from scratch daily.
+
+  about:
+    title: About Us
+    description: Learn about Maple Street Bakery's three generations of baking tradition since 1987.
+
+  contact:
+    title: Visit Us
+    description: Find us at 456 Maple Street in San Francisco. View hours, location, and contact information.

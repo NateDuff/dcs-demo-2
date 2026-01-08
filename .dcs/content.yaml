@@ -1,0 +1,129 @@
+# .dcs/content.yaml
+# Managed by DCS Portal - Do not edit manually
+# Text content for Maple Street Bakery
+
+version: 1
+lastUpdated: "2026-01-06T00:00:00Z"
+updatedBy: "initial-setup"
+
+global:
+  nav.home: Home
+  nav.menu: Menu
+  nav.about: About
+  nav.contact: Contact
+  footer.copyright: © 2026 Maple Street Bakery. All rights reserved.
+  footer.address: "456 Maple Street, San Francisco, CA 94110"
+  cta.orderOnline: Order Online
+  cta.viewMenu: View Menu
+
+pages:
+  home:
+    hero.title: Fresh-Baked Goodness Every Day
+    hero.subtitle: Artisan bread, pastries, and treats made with love since 1987.
+    hero.cta: Order Now
+    featured.title: Today's Fresh Picks
+    featured.item1.name: Sourdough Loaf
+    featured.item1.description: Our signature tangy sourdough, crusty outside, soft inside.
+    featured.item1.price: "$7.50"
+    featured.item2.name: Maple Walnut Croissant
+    featured.item2.description: Flaky layers of butter and our special maple glaze.
+    featured.item2.price: "$4.95"
+    featured.item3.name: Cinnamon Roll
+    featured.item3.description: Warm, gooey, and topped with cream cheese frosting.
+    featured.item3.price: "$4.50"
+    hours.title: Visit Us
+    hours.weekdays: "Mon-Fri: 6am - 6pm"
+    hours.saturday: "Saturday: 7am - 5pm"
+    hours.sunday: "Sunday: 8am - 3pm"
+    testimonial.quote: "The best croissants outside of Paris. I've been coming here every Saturday for 10 years!"
+    testimonial.author: "Maria L., Regular Customer"
+  
+  menu:
+    hero.title: Our Menu
+    hero.subtitle: Everything baked fresh daily. Here when it's gone, it's gone!
+    breads.title: Artisan Breads
+    breads.sourdough.name: Classic Sourdough
+    breads.sourdough.description: 36-hour fermented, crusty perfection
+    breads.sourdough.price: "$7.50"
+    breads.baguette.name: French Baguette
+    breads.baguette.description: Traditional, crispy crust
+    breads.baguette.price: "$4.50"
+    breads.rye.name: Dark Rye
+    breads.rye.description: Caraway seeds, old-world recipe
+    breads.rye.price: "$8.00"
+    breads.multigrain.name: Seven Grain
+    breads.multigrain.description: Hearty and nutritious
+    breads.multigrain.price: "$8.50"
+    pastries.title: Pastries
+    pastries.croissant.name: Butter Croissant
+    pastries.croissant.description: 27 layers of pure butter
+    pastries.croissant.price: "$3.95"
+    pastries.almond.name: Almond Croissant
+    pastries.almond.description: Filled with almond cream
+    pastries.almond.price: "$4.95"
+    pastries.painchoc.name: Pain au Chocolat
+    pastries.painchoc.description: Dark chocolate batons
+    pastries.painchoc.price: "$4.50"
+    pastries.danish.name: Fruit Danish
+    pastries.danish.description: Seasonal fruit, cream cheese
+    pastries.danish.price: "$4.25"
+    sweets.title: Sweet Treats
+    sweets.cinnamon.name: Cinnamon Roll
+    sweets.cinnamon.description: Cream cheese frosting
+    sweets.cinnamon.price: "$4.50"
+    sweets.brownie.name: Fudge Brownie
+    sweets.brownie.description: Dense, chocolatey
+    sweets.brownie.price: "$3.50"
+    sweets.cookie.name: Chocolate Chip Cookie
+    sweets.cookie.description: Chewy center, crisp edges
+    sweets.cookie.price: "$2.50"
+    drinks.title: Drinks
+    drinks.coffee.name: Drip Coffee
+    drinks.coffee.description: Local roast, freshly brewed
+    drinks.coffee.price: "$2.50"
+    drinks.latte.name: Café Latte
+    drinks.latte.description: Double shot, steamed milk
+    drinks.latte.price: "$4.50"
+    drinks.tea.name: Hot Tea
+    drinks.tea.description: Selection of loose leaf
+    drinks.tea.price: "$3.00"
+  
+  about:
+    hero.title: Our Story
+    hero.subtitle: A neighborhood bakery with roots in tradition.
+    story.title: Three Generations of Baking
+    story.paragraph1: Maple Street Bakery was founded in 1987 by Anna and Marcus Chen, who brought their family recipes from their hometown in Europe. What started as a tiny storefront has grown into a beloved neighborhood institution.
+    story.paragraph2: Today, their granddaughter Sarah continues the tradition, using the same recipes, the same techniques, and the same commitment to quality that made Maple Street famous.
+    story.paragraph3: We still start baking at 3am every day to ensure everything is fresh when we open. No shortcuts, no preservatives — just real ingredients and real craft.
+    values.title: What We Believe
+    values.fresh: "Fresh Daily - Everything is baked from scratch each morning"
+    values.local: "Local First - We source ingredients from local farms when possible"
+    values.community: "Community - More than a bakery, we're a neighborhood gathering place"
+    team.title: Meet the Team
+    team.sarah.name: Sarah Chen
+    team.sarah.role: Head Baker & Owner
+    team.marco.name: Marco Rodriguez
+    team.marco.role: Pastry Chef
+    team.lisa.name: Lisa Park
+    team.lisa.role: Front of House Manager
+  
+  contact:
+    hero.title: Visit Us
+    hero.subtitle: We'd love to see you!
+    address.title: Location
+    address.street: 456 Maple Street
+    address.city: San Francisco, CA 94110
+    address.directions: "Corner of Maple and Oak, look for the red awning"
+    hours.title: Hours
+    hours.weekdays: "Monday - Friday: 6am - 6pm"
+    hours.saturday: "Saturday: 7am - 5pm"
+    hours.sunday: "Sunday: 8am - 3pm"
+    contact.title: Get in Touch
+    contact.phone: (415) 555-0123
+    contact.email: hello@maplestreetbakery.com
+    form.name: Your Name
+    form.email: Email
+    form.message: Message
+    form.submit: Send Message
+    catering.title: Catering & Special Orders
+    catering.description: Planning an event? We offer catering for meetings, parties, and special occasions. Custom cakes and large orders require 48-hour notice.
