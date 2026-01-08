@@ -8,7 +8,7 @@ updatedBy: "initial-setup"
 
 global:
   siteName: Maple Street Bakery
-  siteUrl: https://demo-3.duffcloudservices.com
+  siteUrl: https://demo-2.duffcloudservices.com
   locale: en_US
   defaultTitle: Maple Street Bakery | Fresh Artisan Baked Goods
   defaultDescription: Fresh-baked artisan bread, pastries, and treats made daily in San Francisco since 1987. Visit our Maple Street location.
@@ -19,8 +19,8 @@ global:
     facebook: "maplestreetbakery"
 
   images:
-    logo: https://demo-3.duffcloudservices.com/logo.svg
-    ogDefault: https://demo-3.duffcloudservices.com/og-image.jpg
+    logo: https://demo-2.duffcloudservices.com/logo.svg
+    ogDefault: https://demo-2.duffcloudservices.com/og-image.jpg
 
   robots: "index, follow"
 
@@ -30,7 +30,7 @@ global:
         "@type": Bakery
         name: Maple Street Bakery
         description: Fresh-baked artisan bread, pastries, and treats made daily.
-        url: https://demo-3.duffcloudservices.com
+        url: https://demo-2.duffcloudservices.com
         telephone: "(415) 555-0123"
         address:
           "@type": PostalAddress
