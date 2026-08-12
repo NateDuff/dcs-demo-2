@@ -54,17 +54,28 @@ const featuredItems = [
 
 <template>
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-bakery-100 to-cream py-20 md:py-32">
+  <section 
+    data-section="hero" 
+    data-section-label="Hero Banner"
+    class="relative bg-gradient-to-b from-bakery-100 to-cream py-20 md:py-32"
+  >
     <div class="container mx-auto px-6">
       <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-6xl font-display font-bold text-bakery-900 mb-6 leading-tight">
+        <h1 
+          data-text-key="hero.title"
+          class="text-4xl md:text-6xl font-display font-bold text-bakery-900 mb-6 leading-tight"
+        >
           {{ t('hero.title') }}
         </h1>
-        <p class="text-xl text-bakery-700 mb-8">
+        <p data-text-key="hero.subtitle" class="text-xl text-bakery-700 mb-8">
           {{ t('hero.subtitle') }}
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="#order" class="bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition text-lg">
+          <a 
+            href="#order" 
+            data-text-key="hero.cta"
+            class="bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition text-lg"
+          >
             {{ t('hero.cta') }}
           </a>
           <RouterLink to="/menu" class="border-2 border-bakery-600 text-bakery-600 px-8 py-3 rounded-full font-semibold hover:bg-bakery-600 hover:text-white transition text-lg">
@@ -80,21 +91,37 @@ const featuredItems = [
   </section>
 
   <!-- Featured Items -->
-  <section class="py-16 bg-white">
+  <section 
+    data-section="featured" 
+    data-section-label="Featured Items"
+    class="py-16 bg-white"
+  >
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-display font-bold text-bakery-900 text-center mb-12">
+      <h2 
+        data-text-key="featured.title"
+        class="text-3xl font-display font-bold text-bakery-900 text-center mb-12"
+      >
         {{ t('featured.title') }}
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div 
-          v-for="item in featuredItems" 
+          v-for="(item, index) in featuredItems" 
           :key="item.name"
           class="bg-bakery-50 rounded-2xl p-6 text-center hover:shadow-lg transition"
         >
           <div class="text-6xl mb-4">{{ item.emoji }}</div>
-          <h3 class="text-xl font-semibold text-bakery-900 mb-2">{{ item.name }}</h3>
-          <p class="text-bakery-600 mb-4">{{ item.description }}</p>
-          <span class="text-2xl font-bold text-bakery-700">{{ item.price }}</span>
+          <h3 
+            :data-text-key="`featured.item${index + 1}.name`"
+            class="text-xl font-semibold text-bakery-900 mb-2"
+          >{{ item.name }}</h3>
+          <p 
+            :data-text-key="`featured.item${index + 1}.description`"
+            class="text-bakery-600 mb-4"
+          >{{ item.description }}</p>
+          <span 
+            :data-text-key="`featured.item${index + 1}.price`"
+            class="text-2xl font-bold text-bakery-700"
+          >{{ item.price }}</span>
         </div>
       </div>
       <div class="text-center mt-10">
@@ -112,11 +139,18 @@ const featuredItems = [
   </section>
 
   <!-- Hours & Location -->
-  <section class="py-16 bg-bakery-800 text-white">
+  <section 
+    data-section="hours" 
+    data-section-label="Hours & Location"
+    class="py-16 bg-bakery-800 text-white"
+  >
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-display font-bold mb-6">{{ t('hours.title') }}</h2>
+          <h2 
+            data-text-key="hours.title"
+            class="text-3xl font-display font-bold mb-6"
+          >{{ t('hours.title') }}</h2>
           <div class="space-y-4">
             <div class="flex items-center gap-4">
               <div class="w-12 h-12 bg-bakery-700 rounded-full flex items-center justify-center">
@@ -125,9 +159,9 @@ const featuredItems = [
                 </svg>
               </div>
               <div>
-                <p class="font-semibold">{{ t('hours.weekdays') }}</p>
-                <p class="text-bakery-200">{{ t('hours.saturday') }}</p>
-                <p class="text-bakery-200">{{ t('hours.sunday') }}</p>
+                <p data-text-key="hours.weekdays" class="font-semibold">{{ t('hours.weekdays') }}</p>
+                <p data-text-key="hours.saturday" class="text-bakery-200">{{ t('hours.saturday') }}</p>
+                <p data-text-key="hours.sunday" class="text-bakery-200">{{ t('hours.sunday') }}</p>
               </div>
             </div>
             <div class="flex items-center gap-4">
@@ -144,11 +178,15 @@ const featuredItems = [
             </div>
           </div>
         </div>
-        <div class="bg-bakery-700 rounded-2xl p-8">
-          <blockquote class="text-xl italic mb-4">
+        <div 
+          data-section="testimonial" 
+          data-section-label="Customer Testimonial"
+          class="bg-bakery-700 rounded-2xl p-8"
+        >
+          <blockquote data-text-key="testimonial.quote" class="text-xl italic mb-4">
             "{{ t('testimonial.quote') }}"
           </blockquote>
-          <p class="text-bakery-200">— {{ t('testimonial.author') }}</p>
+          <p data-text-key="testimonial.author" class="text-bakery-200">— {{ t('testimonial.author') }}</p>
         </div>
       </div>
     </div>

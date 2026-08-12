@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import { useTextContent, useSEO } from '@duffcloudservices/cms'
+
+const { t } = useTextContent({
+  pageSlug: 'menu',
+  defaults: {
+    'hero.title': 'Our Menu',
+    'hero.subtitle': "Everything baked fresh daily. Here when it's gone, it's gone!",
+    'breads.title': 'Artisan Breads',
+    'pastries.title': 'Pastries',
+    'sweets.title': 'Sweet Treats',
+    'drinks.title': 'Drinks',
+    'catering.title': 'Catering & Special Orders',
+    'catering.description': 'Planning an event? We offer catering for meetings, parties, and special occasions. Custom cakes and large orders require 48-hour notice.',
+    'catering.cta': 'Contact Us for Orders',
+  },
+})
+
+const { applyHead } = useSEO('menu')
+applyHead()
+
 interface MenuItem {
   name: string
   description: string
@@ -6,14 +26,14 @@ interface MenuItem {
 }
 
 interface MenuCategory {
-  title: string
+  key: string
   emoji: string
   items: MenuItem[]
 }
 
 const menuCategories: MenuCategory[] = [
   {
-    title: 'Artisan Breads',
+    key: 'breads',
     emoji: '🍞',
     items: [
       { name: 'Classic Sourdough', description: '36-hour fermented, crusty perfection', price: '$7.50' },
@@ -25,7 +45,7 @@ const menuCategories: MenuCategory[] = [
     ]
   },
   {
-    title: 'Pastries',
+    key: 'pastries',
     emoji: '🥐',
     items: [
       { name: 'Butter Croissant', description: '27 layers of pure butter', price: '$3.95' },
@@ -37,7 +57,7 @@ const menuCategories: MenuCategory[] = [
     ]
   },
   {
-    title: 'Sweet Treats',
+    key: 'sweets',
     emoji: '🍰',
     items: [
       { name: 'Cinnamon Roll', description: 'Cream cheese frosting', price: '$4.50' },
@@ -49,7 +69,7 @@ const menuCategories: MenuCategory[] = [
     ]
   },
   {
-    title: 'Drinks',
+    key: 'drinks',
     emoji: '☕',
     items: [
       { name: 'Drip Coffee', description: 'Local roast, freshly brewed', price: '$2.50' },
@@ -65,25 +85,43 @@ const menuCategories: MenuCategory[] = [
 
 <template>
   <!-- Hero -->
-  <section class="bg-gradient-to-b from-bakery-100 to-cream py-16">
+  <section 
+    data-section="hero" 
+    data-section-label="Hero Banner"
+    class="bg-gradient-to-b from-bakery-100 to-cream py-16"
+  >
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-display font-bold text-bakery-900 mb-4">
-        Our Menu
+      <h1 
+        data-text-key="hero.title"
+        class="text-4xl md:text-5xl font-display font-bold text-bakery-900 mb-4"
+      >
+        {{ t('hero.title') }}
       </h1>
-      <p class="text-xl text-bakery-700 max-w-2xl mx-auto">
-        Everything baked fresh daily. Here when it's gone, it's gone!
+      <p 
+        data-text-key="hero.subtitle"
+        class="text-xl text-bakery-700 max-w-2xl mx-auto"
+      >
+        {{ t('hero.subtitle') }}
       </p>
     </div>
   </section>
 
   <!-- Menu Categories -->
-  <section class="py-12">
+  <section 
+    data-section="menu-categories" 
+    data-section-label="Menu Items"
+    data-dynamic
+    class="py-12"
+  >
     <div class="container mx-auto px-6">
       <div class="space-y-16">
-        <div v-for="category in menuCategories" :key="category.title">
+        <div v-for="category in menuCategories" :key="category.key">
           <div class="flex items-center gap-3 mb-8">
             <span class="text-4xl">{{ category.emoji }}</span>
-            <h2 class="text-3xl font-display font-bold text-bakery-900">{{ category.title }}</h2>
+            <h2 
+              :data-text-key="`${category.key}.title`"
+              class="text-3xl font-display font-bold text-bakery-900"
+            >{{ t(`${category.key}.title`) }}</h2>
           </div>
           
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,21 +143,31 @@ const menuCategories: MenuCategory[] = [
   </section>
 
   <!-- Special Orders Banner -->
-  <section class="py-12 bg-bakery-100">
+  <section 
+    data-section="catering" 
+    data-section-label="Catering & Special Orders"
+    class="py-12 bg-bakery-100"
+  >
     <div class="container mx-auto px-6">
       <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-sm">
-        <h2 class="text-2xl md:text-3xl font-display font-bold text-bakery-900 mb-4">
-          Catering & Special Orders
+        <h2 
+          data-text-key="catering.title"
+          class="text-2xl md:text-3xl font-display font-bold text-bakery-900 mb-4"
+        >
+          {{ t('catering.title') }}
         </h2>
-        <p class="text-bakery-700 max-w-2xl mx-auto mb-6">
-          Planning an event? We offer catering for meetings, parties, and special occasions. 
-          Custom cakes and large orders require 48-hour notice.
+        <p 
+          data-text-key="catering.description"
+          class="text-bakery-700 max-w-2xl mx-auto mb-6"
+        >
+          {{ t('catering.description') }}
         </p>
         <a 
           href="/contact" 
+          data-text-key="catering.cta"
           class="inline-block bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition"
         >
-          Contact Us for Orders
+          {{ t('catering.cta') }}
         </a>
       </div>
     </div>
