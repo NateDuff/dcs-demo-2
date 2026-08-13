@@ -84,92 +84,94 @@ const menuCategories: MenuCategory[] = [
 </script>
 
 <template>
-  <!-- Hero -->
-  <section 
-    data-section="hero" 
-    data-section-label="Hero Banner"
-    class="bg-gradient-to-b from-bakery-100 to-cream py-16"
-  >
-    <div class="container mx-auto px-6 text-center">
-      <h1 
-        data-text-key="hero.title"
-        class="text-4xl md:text-5xl font-display font-bold text-bakery-900 mb-4"
-      >
-        {{ t('hero.title') }}
-      </h1>
-      <p 
-        data-text-key="hero.subtitle"
-        class="text-xl text-bakery-700 max-w-2xl mx-auto"
-      >
-        {{ t('hero.subtitle') }}
-      </p>
-    </div>
-  </section>
+  <div class="page-root">
+    <!-- Hero -->
+    <section 
+      data-section="hero" 
+      data-section-label="Hero Banner"
+      class="bg-gradient-to-b from-bakery-100 to-cream py-16"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1 
+          data-text-key="hero.title"
+          class="text-4xl md:text-5xl font-display font-bold text-bakery-900 mb-4"
+        >
+          {{ t('hero.title') }}
+        </h1>
+        <p 
+          data-text-key="hero.subtitle"
+          class="text-xl text-bakery-700 max-w-2xl mx-auto"
+        >
+          {{ t('hero.subtitle') }}
+        </p>
+      </div>
+    </section>
 
-  <!-- Menu Categories -->
-  <section 
-    data-section="menu-categories" 
-    data-section-label="Menu Items"
-    data-dynamic
-    class="py-12"
-  >
-    <div class="container mx-auto px-6">
-      <div class="space-y-16">
-        <div v-for="category in menuCategories" :key="category.key">
-          <div class="flex items-center gap-3 mb-8">
-            <span class="text-4xl">{{ category.emoji }}</span>
-            <h2 
-              :data-text-key="`${category.key}.title`"
-              class="text-3xl font-display font-bold text-bakery-900"
-            >{{ t(`${category.key}.title`) }}</h2>
-          </div>
+    <!-- Menu Categories -->
+    <section 
+      data-section="menu-categories" 
+      data-section-label="Menu Items"
+      data-dynamic
+      class="py-12"
+    >
+      <div class="container mx-auto px-6">
+        <div class="space-y-16">
+          <div v-for="category in menuCategories" :key="category.key">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="text-4xl">{{ category.emoji }}</span>
+              <h2 
+                :data-text-key="`${category.key}.title`"
+                class="text-3xl font-display font-bold text-bakery-900"
+              >{{ t(`${category.key}.title`) }}</h2>
+            </div>
           
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div 
-              v-for="item in category.items" 
-              :key="item.name"
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
-            >
-              <div class="flex justify-between items-start mb-2">
-                <h3 class="text-lg font-semibold text-bakery-900">{{ item.name }}</h3>
-                <span class="text-lg font-bold text-bakery-600">{{ item.price }}</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div 
+                v-for="item in category.items" 
+                :key="item.name"
+                class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
+              >
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-lg font-semibold text-bakery-900">{{ item.name }}</h3>
+                  <span class="text-lg font-bold text-bakery-600">{{ item.price }}</span>
+                </div>
+                <p class="text-bakery-600 text-sm">{{ item.description }}</p>
               </div>
-              <p class="text-bakery-600 text-sm">{{ item.description }}</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Special Orders Banner -->
-  <section 
-    data-section="catering" 
-    data-section-label="Catering & Special Orders"
-    class="py-12 bg-bakery-100"
-  >
-    <div class="container mx-auto px-6">
-      <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-sm">
-        <h2 
-          data-text-key="catering.title"
-          class="text-2xl md:text-3xl font-display font-bold text-bakery-900 mb-4"
-        >
-          {{ t('catering.title') }}
-        </h2>
-        <p 
-          data-text-key="catering.description"
-          class="text-bakery-700 max-w-2xl mx-auto mb-6"
-        >
-          {{ t('catering.description') }}
-        </p>
-        <a 
-          href="/contact" 
-          data-text-key="catering.cta"
-          class="inline-block bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition"
-        >
-          {{ t('catering.cta') }}
-        </a>
+    <!-- Special Orders Banner -->
+    <section 
+      data-section="catering" 
+      data-section-label="Catering & Special Orders"
+      class="py-12 bg-bakery-100"
+    >
+      <div class="container mx-auto px-6">
+        <div class="bg-white rounded-2xl p-8 md:p-12 text-center shadow-sm">
+          <h2 
+            data-text-key="catering.title"
+            class="text-2xl md:text-3xl font-display font-bold text-bakery-900 mb-4"
+          >
+            {{ t('catering.title') }}
+          </h2>
+          <p 
+            data-text-key="catering.description"
+            class="text-bakery-700 max-w-2xl mx-auto mb-6"
+          >
+            {{ t('catering.description') }}
+          </p>
+          <a 
+            href="/contact" 
+            data-text-key="catering.cta"
+            class="inline-block bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition"
+          >
+            {{ t('catering.cta') }}
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>

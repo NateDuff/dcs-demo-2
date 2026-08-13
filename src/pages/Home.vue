@@ -53,142 +53,144 @@ const featuredItems = [
 </script>
 
 <template>
-  <!-- Hero Section -->
-  <section 
-    data-section="hero" 
-    data-section-label="Hero Banner"
-    class="relative bg-gradient-to-b from-bakery-100 to-cream py-20 md:py-32"
-  >
-    <div class="container mx-auto px-6">
-      <div class="max-w-3xl">
-        <h1 
-          data-text-key="hero.title"
-          class="text-4xl md:text-6xl font-display font-bold text-bakery-900 mb-6 leading-tight"
-        >
-          {{ t('hero.title') }}
-        </h1>
-        <p data-text-key="hero.subtitle" class="text-xl text-bakery-700 mb-8">
-          {{ t('hero.subtitle') }}
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a 
-            href="#order" 
-            data-text-key="hero.cta"
-            class="bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition text-lg"
+  <div class="page-root">
+    <!-- Hero Section -->
+    <section 
+      data-section="hero" 
+      data-section-label="Hero Banner"
+      class="relative bg-gradient-to-b from-bakery-100 to-cream py-20 md:py-32"
+    >
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl">
+          <h1 
+            data-text-key="hero.title"
+            class="text-4xl md:text-6xl font-display font-bold text-bakery-900 mb-6 leading-tight"
           >
-            {{ t('hero.cta') }}
-          </a>
-          <RouterLink to="/menu" class="border-2 border-bakery-600 text-bakery-600 px-8 py-3 rounded-full font-semibold hover:bg-bakery-600 hover:text-white transition text-lg">
-            View Menu
+            {{ t('hero.title') }}
+          </h1>
+          <p data-text-key="hero.subtitle" class="text-xl text-bakery-700 mb-8">
+            {{ t('hero.subtitle') }}
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a 
+              href="#order" 
+              data-text-key="hero.cta"
+              class="bg-bakery-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-bakery-700 transition text-lg"
+            >
+              {{ t('hero.cta') }}
+            </a>
+            <RouterLink to="/menu" class="border-2 border-bakery-600 text-bakery-600 px-8 py-3 rounded-full font-semibold hover:bg-bakery-600 hover:text-white transition text-lg">
+              View Menu
+            </RouterLink>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative bread illustration -->
+      <div class="absolute right-0 bottom-0 opacity-10 text-[200px] leading-none hidden lg:block">
+        🥖
+      </div>
+    </section>
+
+    <!-- Featured Items -->
+    <section 
+      data-section="featured" 
+      data-section-label="Featured Items"
+      class="py-16 bg-white"
+    >
+      <div class="container mx-auto px-6">
+        <h2 
+          data-text-key="featured.title"
+          class="text-3xl font-display font-bold text-bakery-900 text-center mb-12"
+        >
+          {{ t('featured.title') }}
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div 
+            v-for="(item, index) in featuredItems" 
+            :key="item.name"
+            class="bg-bakery-50 rounded-2xl p-6 text-center hover:shadow-lg transition"
+          >
+            <div class="text-6xl mb-4">{{ item.emoji }}</div>
+            <h3 
+              :data-text-key="`featured.item${index + 1}.name`"
+              class="text-xl font-semibold text-bakery-900 mb-2"
+            >{{ item.name }}</h3>
+            <p 
+              :data-text-key="`featured.item${index + 1}.description`"
+              class="text-bakery-600 mb-4"
+            >{{ item.description }}</p>
+            <span 
+              :data-text-key="`featured.item${index + 1}.price`"
+              class="text-2xl font-bold text-bakery-700"
+            >{{ item.price }}</span>
+          </div>
+        </div>
+        <div class="text-center mt-10">
+          <RouterLink 
+            to="/menu" 
+            class="inline-flex items-center gap-2 text-bakery-600 font-semibold hover:text-bakery-700 transition"
+          >
+            See full menu
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
           </RouterLink>
         </div>
       </div>
-    </div>
-    <!-- Decorative bread illustration -->
-    <div class="absolute right-0 bottom-0 opacity-10 text-[200px] leading-none hidden lg:block">
-      🥖
-    </div>
-  </section>
+    </section>
 
-  <!-- Featured Items -->
-  <section 
-    data-section="featured" 
-    data-section-label="Featured Items"
-    class="py-16 bg-white"
-  >
-    <div class="container mx-auto px-6">
-      <h2 
-        data-text-key="featured.title"
-        class="text-3xl font-display font-bold text-bakery-900 text-center mb-12"
-      >
-        {{ t('featured.title') }}
-      </h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div 
-          v-for="(item, index) in featuredItems" 
-          :key="item.name"
-          class="bg-bakery-50 rounded-2xl p-6 text-center hover:shadow-lg transition"
-        >
-          <div class="text-6xl mb-4">{{ item.emoji }}</div>
-          <h3 
-            :data-text-key="`featured.item${index + 1}.name`"
-            class="text-xl font-semibold text-bakery-900 mb-2"
-          >{{ item.name }}</h3>
-          <p 
-            :data-text-key="`featured.item${index + 1}.description`"
-            class="text-bakery-600 mb-4"
-          >{{ item.description }}</p>
-          <span 
-            :data-text-key="`featured.item${index + 1}.price`"
-            class="text-2xl font-bold text-bakery-700"
-          >{{ item.price }}</span>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <RouterLink 
-          to="/menu" 
-          class="inline-flex items-center gap-2 text-bakery-600 font-semibold hover:text-bakery-700 transition"
-        >
-          See full menu
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </RouterLink>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hours & Location -->
-  <section 
-    data-section="hours" 
-    data-section-label="Hours & Location"
-    class="py-16 bg-bakery-800 text-white"
-  >
-    <div class="container mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 
-            data-text-key="hours.title"
-            class="text-3xl font-display font-bold mb-6"
-          >{{ t('hours.title') }}</h2>
-          <div class="space-y-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-bakery-700 rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+    <!-- Hours & Location -->
+    <section 
+      data-section="hours" 
+      data-section-label="Hours & Location"
+      class="py-16 bg-bakery-800 text-white"
+    >
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 
+              data-text-key="hours.title"
+              class="text-3xl font-display font-bold mb-6"
+            >{{ t('hours.title') }}</h2>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-bakery-700 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p data-text-key="hours.weekdays" class="font-semibold">{{ t('hours.weekdays') }}</p>
+                  <p data-text-key="hours.saturday" class="text-bakery-200">{{ t('hours.saturday') }}</p>
+                  <p data-text-key="hours.sunday" class="text-bakery-200">{{ t('hours.sunday') }}</p>
+                </div>
               </div>
-              <div>
-                <p data-text-key="hours.weekdays" class="font-semibold">{{ t('hours.weekdays') }}</p>
-                <p data-text-key="hours.saturday" class="text-bakery-200">{{ t('hours.saturday') }}</p>
-                <p data-text-key="hours.sunday" class="text-bakery-200">{{ t('hours.sunday') }}</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-bakery-700 rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <p class="font-semibold">456 Maple Street</p>
-                <p class="text-bakery-200">San Francisco, CA 94110</p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-bakery-700 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold">456 Maple Street</p>
+                  <p class="text-bakery-200">San Francisco, CA 94110</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div 
-          data-section="testimonial" 
-          data-section-label="Customer Testimonial"
-          class="bg-bakery-700 rounded-2xl p-8"
-        >
-          <blockquote data-text-key="testimonial.quote" class="text-xl italic mb-4">
-            "{{ t('testimonial.quote') }}"
-          </blockquote>
-          <p data-text-key="testimonial.author" class="text-bakery-200">— {{ t('testimonial.author') }}</p>
+          <div 
+            data-section="testimonial" 
+            data-section-label="Customer Testimonial"
+            class="bg-bakery-700 rounded-2xl p-8"
+          >
+            <blockquote data-text-key="testimonial.quote" class="text-xl italic mb-4">
+              "{{ t('testimonial.quote') }}"
+            </blockquote>
+            <p data-text-key="testimonial.author" class="text-bakery-200">— {{ t('testimonial.author') }}</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
