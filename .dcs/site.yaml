@@ -7,4 +7,4 @@ storage_account: stdemositetwo
 output_location: dist
 
 # Site hosting (static blob storage for demo sites)
-production_url: https://stdemositetwo.z22.web.core.windows.net/
+production_url: https://stdemositetwo.z14.web.core.windows.net/
