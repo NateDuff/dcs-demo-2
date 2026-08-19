@@ -7,6 +7,20 @@ const isMenuOpen = ref(false)
 
 <template>
   <header class="bg-white shadow-sm sticky top-0 z-50">
+    <!--
+      C-486 §9.5 step 2 — fictional-demo disclosure.
+      Deliberately NOT instrumented with data-text-key: this is a compliance
+      statement, not managed content, and must not be editable or removable
+      from the visual editor. It lives inside the sticky header so it stays
+      visible on every route and at every scroll position.
+    -->
+    <div
+      data-demo-disclosure
+      class="bg-amber-400 text-slate-900 text-center text-xs sm:text-sm font-medium px-4 py-2"
+    >
+      Demonstration site — this business is fictional. Built by
+      <a href="https://duffcloudservices.com" class="underline hover:no-underline">Duff Cloud Services</a>.
+    </div>
     <nav class="container mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
         <RouterLink to="/" class="flex items-center gap-2">
