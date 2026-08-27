@@ -8,3 +8,5 @@ output_location: dist
 
 # Site hosting (static blob storage for demo sites)
 production_url: https://stdemositetwo.z14.web.core.windows.net/
+
+# C-1117: deploy-identity re-point proof run (ISV rebuild of msi-dcs-demo-sites, 2026-08-27)
